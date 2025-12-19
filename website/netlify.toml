@@ -4,5 +4,5 @@
 
 [dev]
     framework = "#custom"
-    command   = "pnpm --filter website... start:netlify"
+    command   = "pnpm --filter website... build && pnpm --filter website... start"
     targetPort = 8888

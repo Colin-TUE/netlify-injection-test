@@ -1,73 +1,35 @@
 # netlify-injection-test
 
-Minimal reproducible repository demonstrating a bug where environment variables are not properly injected into Netlify builds when using PNPM.
-
-## The Bug
-
-When using PNPM with Netlify, environment variables defined in the terminal (e.g., via `export TEST_VAR=value`) are **not** injected into the Netlify build process. However, environment variables defined in a `.env` file or not defined at all are handled correctly by Netlify.
+Minimal reproducible repository testing with a bug where environment variables are not properly injected into Netlify commands when using PNPM.
 
 ## How to Reproduce
 
-### Test Case 1: Environment Variable from Terminal (BUG - FAILS)
+> We use `pnpx` as it seems Netlify has issues with the workspaces in this repo and so does not detect them.
+> It does pick up the static files, but not the relevant commands.
+
+### Test Case 1: Environment Variable from Terminal
 
 ```bash
-# Set an environment variable in the terminal
-export TEST_VAR=from-terminal
-
-pnpm netlify dev
-
-# Expected: The build should succeed with TEST_VAR accessible
-# Actual: The build fails because TEST_VAR is not injected
+export VARIABLE="terminal"
+cd website
+pnpx netlify dev
 ```
 
 ### Test Case 2: Environment Variable from .env File (WORKS)
 
 ```bash
-# Unset the terminal variable
-unset TEST_VAR
-
-# Create a .env file
+unset TEST_VARIABLE
 cp .env.example .env
-
-# Run the Netlify build
-netlify build
-
-# Result: The build succeeds because Netlify picks up the .env file
+cd website
+pnpx netlify dev
 ```
 
-### Test Case 3: No Environment Variable Defined (WORKS - Expected Failure)
+### Test Case 3: No Environment Variable Defined
 
 ```bash
-# Unset the terminal variable
-unset TEST_VAR
-
-# Remove the .env file
+unset TEST_VARIABLE
 rm -f .env
-
-# Run the Netlify build
-netlify build
-
-# Result: The build fails as expected because TEST_VAR is not set anywhere
-```
-
-## Expected Behavior
-
-The Netlify CLI should inject environment variables from the terminal into the build process, regardless of the package manager used (npm, yarn, or pnpm).
-
-## Actual Behavior
-
-When using PNPM, terminal environment variables are not injected into the Netlify build, but `.env` file variables work correctly.
-
-## Testing Locally
-
-To test the build script directly without Netlify:
-
-```bash
-# With environment variable
-TEST_VAR=test-value node build.js
-
-# Without environment variable (should fail)
-node build.js
+pnpx netlify dev
 ```
 
 ## License
