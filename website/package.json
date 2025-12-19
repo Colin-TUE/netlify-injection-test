@@ -1,0 +1,19 @@
+{
+  "name": "website",
+  "description": "website builder",
+  "version": "1.0.0",
+  "author": "Colin-TUE",
+  "license": "MIT",
+  "scripts": {
+    "build": "TODO",
+    "build:preview": "ENABLE_GATSBY_REFRESH_ENDPOINT=true BOB_BUILD_TYPE=preview gatsby build",
+    "clean": "gatsby clean",
+    "clean:netlify": "rm -rf .cache public && cd .netlify && rm -r `ls | grep -v \"^state.json$\"`",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx,.js"
+  },
+  "dependencies": {
+    "@netlify/blobs": "7.4.0",
+    "@netlify/edge-functions": "2.2.0"
+  }
+}

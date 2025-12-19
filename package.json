@@ -2,18 +2,21 @@
   "name": "netlify-injection-test",
   "version": "1.0.0",
   "description": "Minimal reproducible repository to demonstrate Netlify environment variable injection bug with PNPM",
-  "scripts": {
-    "build": "node build.js"
-  },
-  "packageManager": "pnpm@8.0.0",
-  "keywords": [
-    "netlify",
-    "pnpm",
-    "environment-variables"
-  ],
-  "author": "",
+  "packageManager": "pnpm@9.15.0",
+  "author": "Colin-TUE",
   "license": "MIT",
-  "dependencies": {
-    "dotenv": "^16.6.1"
+  "scripts": {
+    "build": "pnpm --filter=website... build",
+    "clean": "rm -rf coverage/ && pnpm --filter=*  clean",
+    "clean:node_modules": "find . -name \"node_modules\" -exec rm -rf '{}' +",
+    "clean:netlify": "pnpm clean && pnpm --filter=@bob/website clean:netlify",
+    "clean:sigerror": "rm -rf website/.cache/.parcel-cache"
+  },
+  "devDependencies": {
+    "netlify-cli": "23.11.0",
+    "prettier": "2.8.8",
+    "ts-node": "10.9.1",
+    "ts-pattern": "5.8.0",
+    "typescript": "5.1.6"
   }
 }

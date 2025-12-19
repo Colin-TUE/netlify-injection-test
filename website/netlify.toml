@@ -1,0 +1,7 @@
+[build]
+  command = "pnpm --filter website... build"
+  publish = "."
+
+[dev]
+    framework = "#custom"
+    command   = "pnpm --filter website... start"
