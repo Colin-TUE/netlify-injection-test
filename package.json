@@ -6,11 +6,12 @@
   "author": "Colin-TUE",
   "license": "MIT",
   "scripts": {
-    "build": "pnpm --filter=website... build",
+    "build": "pnpm --filter=* --no-bail build",
     "clean": "rm -rf coverage/ && pnpm --filter=*  clean",
     "clean:node_modules": "find . -name \"node_modules\" -exec rm -rf '{}' +",
     "clean:netlify": "pnpm clean && pnpm --filter=@bob/website clean:netlify",
-    "clean:sigerror": "rm -rf website/.cache/.parcel-cache"
+    "clean:sigerror": "rm -rf website/.cache/.parcel-cache",
+    "typecheck": "pnpm --filter=* --no-bail typecheck"
   },
   "devDependencies": {
     "netlify-cli": "23.11.0",

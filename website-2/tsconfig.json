@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "build",
+    "baseUrl": ".",
+    "types": ["node"],
+    "moduleResolution": "node",
+    "paths": {
+      "@websrc/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": [".cache", "public", "build", "node_modules", "static"]
+}

@@ -1,20 +1,18 @@
 {
-  "name": "website",
-  "description": "website builder",
+  "name": "website-2",
+  "description": "website builder 2nd version",
   "version": "1.0.0",
   "author": "Colin-TUE",
   "license": "MIT",
   "scripts": {
-    "build": "tsc && node build/injection-test.js",
-    "build:dev": "ts-node src/injection-test.ts",
+    "build": "tsc && node build/test.js",
+    "build:dev": "ts-node src/test.ts",
     "start": "serve public -p 8888",
     "clean": "rm -rf public build",
     "clean:netlify": "rm -rf .cache public build && cd .netlify && rm -r `ls | grep -v \"^state.json$\"`",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@netlify/blobs": "7.4.0",
-    "@netlify/edge-functions": "2.2.0"
   },
   "devDependencies": {
     "ts-node": "10.9.1",

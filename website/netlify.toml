@@ -1,7 +1,8 @@
 [build]
   command = "pnpm --filter website... build"
-  publish = "."
+  publish = "website/public"
 
 [dev]
     framework = "#custom"
     command   = "pnpm --filter website... start"
+    targetPort = 8888

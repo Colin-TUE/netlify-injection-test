@@ -6,19 +6,7 @@ Minimal reproducible repository demonstrating a bug where environment variables 
 
 When using PNPM with Netlify, environment variables defined in the terminal (e.g., via `export TEST_VAR=value`) are **not** injected into the Netlify build process. However, environment variables defined in a `.env` file or not defined at all are handled correctly by Netlify.
 
-## Repository Structure
-
-- `package.json` - Node.js project configuration with PNPM package manager
-- `build.js` - Build script that checks for the `TEST_VAR` environment variable
-- `netlify.toml` - Netlify configuration file
-- `.env.example` - Example environment file
-
 ## How to Reproduce
-
-### Prerequisites
-
-- PNPM installed (`npm install -g pnpm`)
-- Netlify CLI installed (`npm install -g netlify-cli`)
 
 ### Test Case 1: Environment Variable from Terminal (BUG - FAILS)
 
@@ -26,8 +14,7 @@ When using PNPM with Netlify, environment variables defined in the terminal (e.g
 # Set an environment variable in the terminal
 export TEST_VAR=from-terminal
 
-# Run the Netlify build
-netlify build
+pnpm netlify dev
 
 # Expected: The build should succeed with TEST_VAR accessible
 # Actual: The build fails because TEST_VAR is not injected
