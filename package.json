@@ -1,0 +1,19 @@
+{
+  "name": "netlify-injection-test",
+  "version": "1.0.0",
+  "description": "Minimal reproducible repository to demonstrate Netlify environment variable injection bug with PNPM",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "packageManager": "pnpm@8.0.0",
+  "keywords": [
+    "netlify",
+    "pnpm",
+    "environment-variables"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
+}
