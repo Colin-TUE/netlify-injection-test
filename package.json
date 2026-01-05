@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "pnpm --filter=* --no-bail build",
+    "start:netlify": "pnpm --filter=website start:netlify",
     "clean": "rm -rf coverage/ && pnpm --filter=*  clean",
     "clean:node_modules": "find . -name \"node_modules\" -exec rm -rf '{}' +",
     "clean:netlify": "pnpm clean && pnpm --filter=@bob/website clean:netlify",

@@ -4,15 +4,11 @@ Minimal reproducible repository testing with a bug where environment variables a
 
 ## How to Reproduce
 
-> We use `pnpx` as it seems Netlify has issues with the workspaces in this repo and so does not detect them.
-> It does pick up the static files, but not the relevant commands.
-
 ### Test Case 1: Environment Variable from Terminal
 
 ```bash
-export VARIABLE="terminal"
-cd website
-pnpx netlify dev
+export TEST_VARIABLE="terminal"
+pnpm start:netlify
 ```
 
 ### Test Case 2: Environment Variable from .env File (WORKS)
@@ -20,8 +16,7 @@ pnpx netlify dev
 ```bash
 unset TEST_VARIABLE
 cp .env.example .env
-cd website
-pnpx netlify dev
+pnpm start:netlify
 ```
 
 ### Test Case 3: No Environment Variable Defined
@@ -29,7 +24,7 @@ pnpx netlify dev
 ```bash
 unset TEST_VARIABLE
 rm -f .env
-pnpx netlify dev
+pnpm start:netlify
 ```
 
 ## License
