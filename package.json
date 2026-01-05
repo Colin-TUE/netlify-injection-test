@@ -7,10 +7,11 @@
   "license": "MIT",
   "scripts": {
     "build": "pnpm --filter=* --no-bail build",
-    "start:netlify": "pnpm --filter=website start:netlify",
+    "build:netlify": "pnpm netlify build --filter website",
+    "start:netlify": "pnpm clean:sigerror && netlify dev --filter website",
     "clean": "rm -rf coverage/ && pnpm --filter=*  clean",
     "clean:node_modules": "find . -name \"node_modules\" -exec rm -rf '{}' +",
-    "clean:netlify": "pnpm clean && pnpm --filter=@bob/website clean:netlify",
+    "clean:netlify": "pnpm clean && pnpm --filter=website clean:netlify",
     "clean:sigerror": "rm -rf website/.cache/.parcel-cache",
     "typecheck": "pnpm --filter=* --no-bail typecheck"
   },

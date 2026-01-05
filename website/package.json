@@ -7,7 +7,6 @@
   "scripts": {
     "build": "tsc && node build/injection-test.js",
     "build:dev": "ts-node src/injection-test.ts",
-    "start:netlify": "netlify dev",
     "start": "serve public -p 8888",
     "clean": "rm -rf public build",
     "clean:netlify": "rm -rf .cache public build && cd .netlify && rm -r `ls | grep -v \"^state.json$\"`",

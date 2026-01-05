@@ -1,6 +1,6 @@
 {
   "name": "website-2",
-  "description": "website builder 2nd version",
+  "description": "website builder 2nd version - needed to get the choice when running Netlify commands",
   "version": "1.0.0",
   "author": "Colin-TUE",
   "license": "MIT",
