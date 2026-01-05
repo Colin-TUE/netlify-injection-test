@@ -1,0 +1,29 @@
+{
+  "testVariable": "terminal",
+  "hasTestVariable": true,
+  "testAndNetlifyVars": [
+    {
+      "key": "NETLIFY_BLOBS_CONTEXT",
+      "value": "eyJkZXBsb3lJRCI6IjAiLCJlZGdlVVJMIjoiaHR0cDovL2xvY2FsaG9zdDo1NDIwNiIsInNpdGVJRCI6ImMxNjkyZGVhLTU0ZmYtNDE0Yy05ODE1LTRlZGU5M2E0MWI1ZiIsInRva2VuIjoiOWYwOGE0NTYtNzcwYS00MjFjLWExYzktNDBjODIyMTJmODA0IiwidW5jYWNoZWRFZGdlVVJMIjoiaHR0cDovL2xvY2FsaG9zdDo1NDIwNiIsInByaW1hcnlSZWdpb24iOiJkZXYifQ=="
+    },
+    {
+      "key": "NETLIFY_CLI_VERSION",
+      "value": "23.11.0"
+    },
+    {
+      "key": "NETLIFY_DEV",
+      "value": "true"
+    },
+    {
+      "key": "NETLIFY_LOCAL",
+      "value": "true"
+    },
+    {
+      "key": "TEST_VARIABLE",
+      "value": "terminal"
+    }
+  ],
+  "buildTime": "2026-01-05T07:56:43.201Z",
+  "nodeVersion": "v20.19.0",
+  "workingDirectory": "/Users/dkColLam/GIT/netlify-injection-test/website"
+}
